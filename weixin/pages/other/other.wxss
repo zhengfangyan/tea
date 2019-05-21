@@ -1,0 +1,11 @@
+/* pages/other/other.wxss */
+view{
+  text-align: center;
+  color:#999;
+}
+image{
+  margin-top:60rpx;
+  border-radius: 60%;
+  width: 600rpx;
+  height: 600rpx;
+}

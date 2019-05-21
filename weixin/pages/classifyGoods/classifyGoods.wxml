@@ -1,0 +1,53 @@
+<!-- 搜索 -->
+  <view class='refer'>
+    <view class='card1'>
+      <form bindsubmit='searchKey'>
+        <view class='put'>
+          <input type='text' placeholder='请输入搜索商品名称' name='key' bindinput='listenerSearchInput' value='{{values}}' bindconfirm='btn_search' focus="{{focus}}"></input>
+        </view>
+        <view class='but'>
+          <button formType='submit' >{{SearchText}}</button>
+        </view>
+      </form>
+     <!--搜索结果-->
+     <view  class='card' animation="{{animationData}}" >
+      <view wx:if="{{list1.length>0}}">
+        <view wx:for="{{list1}}" wx:key="lid" class='search bg' catchtap="catchTapCategory" data-goodsid="{{item.lid}}">
+          <view>
+            <image src="{{item.limg1}}"></image>
+          </view>
+          <view class='right md'>
+            <view><text>{{item.title}} </text></view>
+            <view><text>{{item.type}} </text></view>
+            <view class='pic'><text>￥{{toFixed.toFixed(item.price)}}</text></view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{list1.length==0}}" class="mei">
+        <image src="http://127.0.0.1:3000/img/goods/so.gif"></image>
+        抱歉，未找到你喜欢的商品 
+      </view>
+    </view> 
+     <!--搜索记录盒子-->
+  <view class="Search_record_box" hidden="{{hiddenName}}">
+    <view class="Searchtext">
+      <text>搜索记录</text>
+      <image bindtap='delete_list' src='http://127.0.0.1:3000/img/goods/del.png'></image>
+    </view>
+    <!--记录词的盒子-->
+    <view class="History_box">
+      <view class="History-list">
+        <text wx:for="{{box}}" data-text="{{item}}" wx:key="key" bindtap='localvalue' >{{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+  </view>
+  <wxs module="toFixed">
+  var toFixed = function (value) {
+  return value.toFixed(2);
+}
+module.exports = {
+   toFixed :toFixed
+}
+</wxs>

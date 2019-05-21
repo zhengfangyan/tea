@@ -1,0 +1,307 @@
+/**index.wxss**/
+.tq{
+   color:#fff; 
+  width: 98%;
+  position: fixed; 
+  z-index:10;
+  text-align: right;
+  margin-right:10rpx;
+}
+.buydes-dialog-container{
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    background-color:rgba(15, 15, 26, 0.7);
+    position: fixed; 
+    z-index: 999;
+}
+.padb{
+  margin:150rpx 20rpx 0 20rpx;
+  text-align:center;
+}
+.padb :nth-child(7){
+  text-align:left;
+}
+.padb :first-child,.padb :last-child{
+  font-size: 50rpx;
+}
+.padb view{
+  margin: 30rpx;
+  padding: 0 10rpx;
+}
+/**1.轮播图**/
+.slider,.slider swiper,.slider image{
+  height:400rpx;
+  width:100%;
+}
+.top,.p_top{
+  width:100%;
+  height:70rpx;
+}
+/*2.菜单  */
+.menu-nav{
+  padding:10rpx  15rpx 50rpx;
+  display: flex;
+  justify-content: space-between;
+  background: url(http://127.0.0.1:3000/img/index/bg2.jpg);
+  background-size:100%;
+}
+.menu-nav .nav-item{
+  width:90rpx; /*商品宽度 */
+  height:130rpx; /* 商品高度 */
+  display: flex;  /* 弹性布局*/
+  flex-direction: column;    /*元素按照列排整 */
+  justify-content: center;   /* 水平居中*/
+  align-items: center;    /*垂直居中*/
+  font-size:20rpx;
+  color:#429e3b;
+  outline: 0；
+}
+.menu-nav .nav-item image{
+width:100%;
+}
+.buttom{
+  padding: 0px  0  80rpx 0;
+  background: url(http://127.0.0.1:3000/img/index/bg.jpg) no-repeat;
+  background-size: 100%;
+  width:100%;
+}
+.buttom image{
+  margin: 0 20rpx;
+  width:700rpx;
+  height:400rpx;
+}
+.flex{
+  position: fixed; 
+  z-index:10;
+  top:950rpx; 
+  right:8rpx;  
+}
+.flex image{
+  width:150rpx;
+  height:190rpx;
+}
+/*倒计时*/
+.title{
+  display: flex;
+  padding:10rpx 15rpx;  
+}
+.title .title-left  image{
+  width:41rpx;
+  height: 41rpx;
+}
+.title .title-left text{
+  font-style:italic;
+  font-size: 40rpx;
+}
+.title .title-left .tj{
+  color:#ff3700;
+}
+.title .title-right{
+  position: relative;
+  left:135rpx;
+}
+.title .title-right .tui-countdown-content{
+  height: 20rpx;
+  text-align: center;
+  background-color: #fff;
+  margin-top:3rpx;
+}
+.title .title-right .tui-conutdown-box{
+  display: inline-block;
+  height: 40rpx;
+  width: 40rpx;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  margin: 0 5rpx;
+}
+.title .title-right .tui-countdown-bg{
+  background-color: #DF0101;
+}
+/*f1滚动  */
+.contain,.group{
+  display: flex;
+  white-space: nowrap; 
+}
+.contain .list{
+  width: 300rpx;
+  display: inline-block; 
+}
+.contain .img .img1{
+  margin: 0 20rpx;
+  width:260rpx;
+  height:260rpx;
+}
+.contain .img .img2{
+  width:60rpx;
+  height:70rpx;
+  position: relative;
+  top:-150rpx;
+  left:-60rpx;
+}
+.contain .text01{
+  margin: 0 15rpx;
+}
+.contain .text01 text{
+  white-space: pre-line;
+  overflow : hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;    
+  -webkit-line-clamp: 2;   
+  -webkit-box-orient: vertical;    
+  word-break: break-all; 
+  width:260rpx;
+}
+.contain .text02{
+  text-align:left;
+  margin:15rpx 0 15rpx 20rpx;
+  color: #ff3700;
+}
+.contain .text03{
+  text-decoration:line-through;
+}
+/* tab */
+.tab{
+  margin-top:15rpx; 
+  display: flex;
+  padding:15rpx 8rpx 15rpx 10rpx;
+}
+.tab image{
+  margin-left:20rpx; 
+  width:330rpx;
+  height:220rpx;
+}
+/*新品首发  */
+.new{
+  margin:15rpx 0;  
+}
+.new>text,.hot>text,.sort>text{
+  display: block;
+  width:100%;
+  text-align: center;
+  padding:5rpx 0px; 
+  color: #424242;
+  font-size:35rpx;
+}
+.new .nav image,.hot .nav image,.sort .nav image{
+  margin-left:10rpx;
+  width:230.75rpx;
+  height:5.75rpx;
+  vertical-align: middle;
+}
+.new .nav :nth-child(3),.hot .nav :nth-child(3),.sort .nav :nth-child(3){
+  width:17rpx;
+  height: 17rpx;
+  margin: 0 2rpx;
+} 
+.new .nav text,.hot .nav text{
+  margin:0 8rpx;
+}
+.new .newlist{
+  margin-top: 30rpx;
+}
+.new .newlist image{
+  width:200rpx;
+  height:200rpx;
+}
+.new .newlist{
+  position:relative;
+}
+.left{
+  width:25%;
+  margin-left:30rpx; 
+}
+.right{
+  width:65%;
+  position:absolute;
+  top:20rpx;
+  right:20rpx;
+}
+.right :nth-child(2){
+  margin: 5rpx 0 12rpx 0;
+}
+.right :nth-child(3){
+  padding-top:10rpx;
+  color: #c00000;
+}
+/*热评产品  */
+.new,.hot,.sort{
+  padding-bottom: 20rpx;
+}
+.hot .hotlist{
+  margin:30rpx 20rpx 0 20rpx; 
+  padding-bottom:20rpx; 
+  display: inline-block;
+  width:260rpx;
+  border:1px solid #ccc;
+}
+.hot .img image {
+  width:260rpx;
+  height:260rpx;
+}
+.text01 image{
+  width:28rpx;
+  height:28rpx;
+}
+.hot .text01{ 
+  margin: 2rpx 8rpx;
+  display: flex;
+ }
+.text01 text{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+  width:250rpx;
+  margin-left:10rpx; 
+}
+.hot .type{
+  width:250rpx;
+  height:140rpx;
+  font-size:25rpx;
+  padding:8rpx 10rpx;
+  white-space: pre-line;
+}
+.hot .text02 text{
+  float:left;
+  display: block;
+  padding: 5rpx 0rpx;
+  font-size: 25rpx;
+}
+.hot .text02 :first-child{
+  margin-left: 10rpx;
+  width:140rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hot .text02 .tx1{
+  color: #c00000;
+} 
+/*TOP8茶叶类目*/
+.sort{
+  padding:10rpx 0;
+  margin-top: 15rpx;
+}
+.sort .nav text{
+  margin: 0 3rpx;
+}
+.sort .sortlist{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20rpx 15rpx 0 20rpx;
+}
+.sort .sortlist  .s1,.sort .sortlist  .s2{
+  height:258rpx;
+}
+.sort .sortlist  .s1 image{
+  border:1px solid #ccc;
+  width:461rpx;
+  height:260rpx;
+}
+.sort .sortlist .s2 image{
+  width:230rpx;
+  height:260rpx;
+  border:1px solid #ccc;
+}
+

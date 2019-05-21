@@ -1,0 +1,163 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='tq'>
+     <view animation="{{animationData}}" class="container-column buydes-dialog-container" wx:if="{{showModalStatus}}">
+        <view class="buydes-dialog-container-top" bindtap="hideModal"></view>
+        <view class="container-column buydes-dialog-container-bottom">
+        <view class='padb'>
+          <view>{{weather.city}}天气实况</view>
+          <view>时间：{{weather.date}}  {{weather.week}}</view>
+          <view>  
+            <image mode="widthFix" src="http://cddn.huyahaha.com/tianqiapi/skin/qq/{{weather.wea_img}}.png" style="width:120rpx;" /></view>
+          <view>天气：{{weather.tem}}℃ {{weather.wea}}</view>
+          <view>污染度：{{weather.air}}  {{weather.air_level}}</view>
+          <view>PM25值：{{weather.air_pm25}}</view>
+          <view>建议：{{weather.air_tips}}</view>
+          <view bindtap="hideModal" class="buydes-dialog-container-bottom-item" >取消   </view>
+        </view>
+      </view>
+    </view>
+    <image bindtap="showModal" bindload="imageLoad" style="width:{{imageWidth-10}}px;;height:{{imageHeight-10}}px;" src="http://127.0.0.1:3000/img/index/tq.png"/>
+  </view>
+  <!-- 轮播  -->
+  <view class='slider'>
+    <swiper autoplay="{{autoplay}}" interval="{{interval}}" indicator-dots="{{indicatorDots}}" duration="{{duration}}">
+      <swiper-item wx:for="{{list1}}" wx:key="index">
+        <image src="{{item.img}}" lazy-load="true" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='top'>
+    <image src="http://127.0.0.1:3000/img/index/top.jpg" class='p_top'></image>
+  </view>
+  <!-- 菜单  -->
+  <view class="menu-nav">
+    <navigator url="/pages/goods/goods" hover-class="none" class="nav-item" wx:for="{{list2}}" wx:key="index" >
+      <image src="{{item.img}}" lazy-load="true" mode="aspectFill"></image>
+      <text>{{item.title}}</text>
+    </navigator> 
+  </view>
+  <view class="buttom">
+    <image src="http://127.0.0.1:3000/img/index/pro.jpg" lazy-load="true" mode="aspectFill"></image>
+  </view>
+  <navigator url='/pages/classifyGoods/classifyGoods' hover-class='none' class='flex'>
+    <image src="http://127.0.0.1:3000/img/index/right.gif"></image>
+  </navigator> 
+  <!--倒计时  -->
+  <view class='title bg md'>
+    <view class='title-left'>
+      <image src='http://127.0.0.1:3000/img/index/nz.png'></image>
+      <text>限时</text><text class="tj">特价</text>
+    </view>
+    <view class='title-right'>
+      <view class='tui-countdown-content' wx:for="{{countDownList}}" wx:key="countDownList">
+        距结束：
+        <text class='tui-conutdown-box'>{{item.hou}}</text>时
+        <text class='tui-conutdown-box'>{{item.min}}</text>分
+        <text class='tui-conutdown-box tui-countdown-bg'>{{item.sec}}</text>秒
+      </view>
+    </view>
+  </view>
+  <!-- 滚动 -->
+  <view class='contain bg md'>
+    <scroll-view class="image-group" scroll-x="true">
+      <view wx:for="{{list3}}" wx:key="index" class='list' catchtap="catchTapCategory" data-goodsid="{{item.lid}}">
+      <view class='img'>
+        <image src="{{item.pimg}}" class='img1'></image>
+        <image src="{{item.pic}}" class='img2'></image>
+      </view>
+        <view class='text01'>
+         <text >{{item.details}}</text>
+        </view>
+        <view class='text02'>
+         <text >￥{{toFixed.toFixed(item.price)}}</text>
+         <text class='text03 sm'>￥{{item.pri}}</text>
+        </view>
+      </view>
+      </scroll-view> 
+  </view>
+  <!-- tab -->
+  <view class=' tab bg '>
+    <image src="http://127.0.0.1:3000/img/index/tab01.jpg"></image>
+    <image src="http://127.0.0.1:3000/img/index/tab02.jpg"></image>
+  </view>
+  <!--新品首发-->
+  <view class='new bg'>
+    <text>新品首发</text>
+    <view class='nav'>
+      <image src='http://127.0.0.1:3000/img/index/rg.png'></image> 
+      <text class='sm'>茶界新品</text>
+      <image src='http://127.0.0.1:3000/img/index/cen.png'></image>
+      <text class='sm'>新鲜直达</text>
+      <image src='http://127.0.0.1:3000/img/index/rg.png'></image>
+    </view>
+    <view class='newlist md' wx:for="{{list4}}" wx:key="index" catchtap="catchTapCategory" data-goodsid="{{item.lid}}">
+      <view class='left' >
+        <image src="{{item.pimg}}"></image>
+      </view>
+      <view class='right'>
+        <view><text class='small'>{{item.details}}</text></view>
+        <view><text class='sm'>{{item.type}}</text></view>
+        <view><text>￥{{toFixed.toFixed(item.price)}}</text></view>
+      </view>
+    </view>
+  </view>
+  <!--热评产品-->
+  <view class="hot bg">
+    <text>热评产品</text>
+    <view class='nav'>
+      <image src='http://127.0.0.1:3000/img/index/rg.png'></image> 
+      <text class='sm'>口碑精选</text>
+      <image src='http://127.0.0.1:3000/img/index/cen1.png'></image>
+      <text class='sm'>你的好茶</text>
+      <image src='http://127.0.0.1:3000/img/index/rg.png'></image>
+    </view>
+    <view class="group">
+      <scroll-view  scroll-x="true">
+        <view wx:for="{{list5}}" wx:key="index" class='hotlist' catchtap="catchTapCategory" data-goodsid="{{item.lid}}">
+        <view class='img'>
+          <image src="{{item.pimg}}" class='img1'></image>
+        </view>
+        <view class='type'>
+          <text >{{item.type}}</text>
+        </view>
+        <view class='text01'>
+          <image src="{{item.pic}}"></image>
+          <text class='sm'>{{item.pri}}</text>
+        </view>
+        <view class='text02'>
+          <text >{{item.details}}</text>
+          <text class='tx1'>￥{{toFixed.toFixed(item.price)}}</text>
+        </view>
+      </view>
+      </scroll-view> 
+    </view>
+  </view>
+  <!-- TOP8茶叶类目  -->
+  <view class='sort bg'>
+   <text>TOP8茶叶类目</text>
+    <view class='nav'>
+      <image src='http://127.0.0.1:3000/img/index/rg.png'></image> 
+      <text class='sm'>品八大茗茶</text>
+      <image src='http://127.0.0.1:3000/img/index/cen.png'></image>
+      <text class='sm'>享闲雅之意</text>
+      <image src='http://127.0.0.1:3000/img/index/rg.png'></image>
+    </view>
+    <navigator url="/pages/goods/goods"  class='sortlist' hover-class='none'>
+    <view class='s1' wx:for="{{list6}}" wx:key="index">
+      <image src='{{item.pimg}}'></image>
+    </view>
+    <view class='s2' wx:for="{{list7}}" wx:key="index">
+      <image src='{{item.pimg}}'></image>
+    </view>
+  </navigator>
+  </view>
+</view>
+<wxs module="toFixed">
+  var toFixed = function (value) {
+  return value.toFixed(2);
+}
+module.exports = {
+   toFixed :toFixed
+}
+</wxs>

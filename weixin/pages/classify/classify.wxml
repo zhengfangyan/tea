@@ -1,0 +1,29 @@
+去<view class="detail">
+  <!-- 分类  -->
+  <view class="content">
+    <view class="menu-container">
+      <view class="scroll-view-ul">   
+        <block wx:for="{{detail}}" wx:for-item="item" wx:key="index" >
+          <view class="scroll-view-item {{indexSize === index?'active':''}}"   bindtap="scrollTo" data-index="{{index}}">{{item.title}}
+          </view>
+        </block>
+        <navigator  url="/pages/classifyGoods/classifyGoods" class='ss'>
+          <view>搜索其他商品</view>
+        </navigator> 
+      </view>
+    </view>
+    <swiper indicator-dots='true' class="detail-container" bindchange="change" data-index="{{index}}" current="{{indexSize}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" vertical="{{true}}">
+      <swiper-item wx:for="{{detail}}" wx:key="index" >
+        <scroll-view class=" market-scroll-list" scroll-y="true">
+          <view class="title">{{detail[indexSize].title}} </view>
+          <a wx:for="{{detail[indexSize].list}}" wx:key="index" >
+            <navigator url="/pages/goods/goods" class="inner bg">
+              <image src="{{item.img1}}"></image>
+              <view class="overflow md">{{item.title}}</view>
+            </navigator>
+          </a>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view> 

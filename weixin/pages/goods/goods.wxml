@@ -1,0 +1,24 @@
+<scroll-view scroll-y="true"  bindscrolltolower="brandShow" class='container' style="height:{{scrollH}}px">
+  <view class="img_item md">
+    <view wx:for="{{newGoodsData}}" wx:key="lid" class='item bg'>
+      <view class="item_info" catchtap="catchTapCategory" data-goodsid="{{item.lid}}">
+        <image src="{{item.limg1}}" ></image>
+      </view>
+      <view class="product-name">
+         {{item.title}}
+      </view>
+      <view class="product-price-wrap">￥{{toFixed.toFixed(item.price)}}</view>
+    </view>
+  </view> 
+</scroll-view>
+ <view style="display:none">
+  <image wx:for="{{brandGoods}}" wx:key="lid" id="{{item.lid}}" src="{{item.imgUrl}}" bindload="onImageLoad1"></image>
+</view> 
+  <wxs module="toFixed">
+  var toFixed = function (value) {
+  return value.toFixed(2);
+}
+module.exports = {
+   toFixed :toFixed
+}
+</wxs>

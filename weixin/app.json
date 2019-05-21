@@ -1,0 +1,57 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/goods/goods",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/classify/classify",
+    "pages/classifyGoods/classifyGoods",
+    "pages/addressList/addressList",
+    "pages/address/address",
+    "pages/cart1/cart1",
+    "pages/detail/detail",
+    "pages/other/other",
+    "pages/collect/collect"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#67b68e",
+    "navigationBarTitleText": "醉品茶城",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "font-size": "20px",
+    "color": "#858585",
+    "selectedColor": "#ff3700",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "iconPath": "img/sort.png",
+        "selectedIconPath": "img/sort-active.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart1/cart1",
+        "iconPath": "img/cart.png",
+        "selectedIconPath": "img/cart-active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "img/mine.png",
+        "selectedIconPath": "img/mine-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

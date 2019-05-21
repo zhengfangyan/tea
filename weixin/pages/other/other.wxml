@@ -1,0 +1,5 @@
+<!--pages/other/other.wxml-->
+<view>
+  <image src="http://127.0.0.1:3000/img/goods/zw.gif"></image>
+  <view>暂时没有数据哦！</view>
+</view>

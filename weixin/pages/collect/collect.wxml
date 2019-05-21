@@ -1,0 +1,19 @@
+<!--pages/collect/collect.wxml-->
+<view class="J-shopping-cart-empty" hidden="{{iscart}}">
+<view class='cart'></view>
+  <text class='empty-text'>快去添加收藏吧！</text>  
+</view> 
+<view class="collect_scroll" hidden="{{hidden}}">
+  <view wx:for="{{collects}}" wx:key="index">
+    <view class="collect_content bg">  
+      <image class="item-image" src="{{item.imgUrl1}}"></image>
+      <view class="list">
+        <text class="title">{{item.title}}</text>
+         <image bindtap="delGoods" id="img{{index}}" data-index="{{index}}" src="http://127.0.0.1:3000/img/goods/del.png"></image> 
+        <view class="row">
+          <text class="sku-price">￥{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

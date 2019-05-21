@@ -1,0 +1,105 @@
+.refer{
+  margin-top: 40rpx;
+  width:100%;
+  height:50rpx;
+  position:relative;
+}
+.put{
+  margin-left:80rpx;
+  border:3px solid #ff3700;
+  padding-left:30rpx;
+  border-radius: 40rpx 0 0 40rpx;
+  width:420rpx;
+}
+.put input{
+  height:75rpx;
+  width:420rpx;
+}
+.but{
+  position: absolute;
+  top:0px;
+  right:55rpx;
+  width: 150rpx;
+}
+.but button{
+  border: 0;
+  outline: 0;
+  background: #ff3700;
+  color:#fff;
+  border-radius: 0 40rpx 40rpx 0;
+  padding:0 8rpx;
+}
+.card{
+  position: relative;
+  z-index: 99;
+  background-color:#fff;
+}
+.search{
+  display: flex;
+  margin-left:-5rpx; 
+  margin-top:20rpx;
+  border-bottom:1px solid  #999;
+}
+.search image{
+  margin:10rpx 20rpx;
+  width:270rpx;
+  height:270rpx;
+}
+.search .right{
+  margin:60rpx 30rpx;
+}
+.search .right :first-child{
+  white-space: pre-line;
+  overflow : hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;    
+  -webkit-line-clamp: 2;   
+  -webkit-box-orient: vertical;    
+  word-break: break-all; 
+}
+.search view{
+  margin: 10rpx 0px;
+}
+.search  .right .pic{
+  color:#c00000;
+}
+.mei{
+  margin:200rpx 0 0rpx 150rpx;
+  color:#999;
+}
+.mei image{
+  display: block;
+  width:500rpx;
+}
+.Searchtext{
+  margin-top:35rpx;
+  font-size: 28rpx;
+  color: #898989;
+  margin-left: 20px;
+  position: relative;
+}
+.Searchtext image{
+  width:20px;
+  height:20px;
+  position:absolute;
+  right:20px;
+}
+.History-list {
+  margin:28rpx 20px 0 20rpx;
+}
+.History-list>text {
+  display: inline-block;
+  height: 56rpx;
+  border-radius: 5px;
+  background: #f5f5f5;
+  max-width: 100%;
+  padding: 0 24rpx;
+  line-height: 56rpx;
+  font-size: 26rpx;
+  color: #393939;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  margin-right: 25rpx;
+}
